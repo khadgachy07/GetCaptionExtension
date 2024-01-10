@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Youtube Caption Extractor",
+    "version": "1.0",
+    "description": "A Chrome extension to extract captions from Youtube videos.",
+    "permissions": ["activeTab", "storage"],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_title": "Youtube Caption Extractor"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.google.com/"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+
+}
